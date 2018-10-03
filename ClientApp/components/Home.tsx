@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
+import { Auth } from './Services/Auth/Auth.js';
 
 export class Home extends React.Component<RouteComponentProps<{}>, {}> {
-    public render() {
+	const auth = new Auth();
+	auth.login();
+	public render() {
+
         return <div>
             <h1>Hello, world!</h1>
             <p>Welcome to your new single-page application, built with:</p>
