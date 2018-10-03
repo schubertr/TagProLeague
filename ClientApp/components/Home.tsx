@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Auth } from './Services/Auth/Auth.js';
+import Auth from './../Services/Auth/Auth';
 
 export class Home extends React.Component<RouteComponentProps<{}>, {}> {
-	const auth = new Auth();
-	auth.login();
+	constructor() {
+		super();
+		const auth = new Auth();
+		auth.login();
+	}
 	public render() {
 
         return <div>
