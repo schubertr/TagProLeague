@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Auth from './../Services/Auth/Auth';
 
 export class NavMenu extends React.Component<{}, {}> {
-    public render() {
+	private login() {
+		const auth = new Auth();
+		auth.login();
+	}
+	public render() {
         return <div className='main-nav'>
                 <div className='navbar navbar-inverse'>
                 <div className='navbar-header'>
@@ -17,8 +22,8 @@ export class NavMenu extends React.Component<{}, {}> {
                 <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
-                        <li>
-                            <NavLink to={'/login'} exact activeClassName='active'>
+						<li>
+							<NavLink onClick={this.login} to={'/login'} exact activeClassName='active'>
                                 <span className='glyphicon glyphicon-globe'></span> Login
                             </NavLink>
                         </li>

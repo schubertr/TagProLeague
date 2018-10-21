@@ -5,6 +5,8 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { League, Leagues } from './components/Leagues/index';
 import { Counter } from './components/Counter';
+import Login from './components/Login';
+
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />
